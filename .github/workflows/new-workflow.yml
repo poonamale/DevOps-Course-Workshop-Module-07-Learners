@@ -29,9 +29,9 @@ jobs:
           working-directory: DotnetTemplate.Web # setting directory as default for all operations
 
     - name: Use Node.js 12.0.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: '12.0.x'
+      uses: actions/setup-node@v3
+      with:
+        node-version: '12.0.x'
 
     - name: Build ts code 
       run: npm ci
