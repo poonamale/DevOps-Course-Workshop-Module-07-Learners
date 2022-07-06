@@ -22,11 +22,9 @@ jobs:
     - name: Test c# code
       run: dotnet test 
 
-    - name: Checkout subdirectory # navigating to directory with TS code
-      uses: actions/checkout@v2  
-      defaults:
-        run:
-          working-directory: DotnetTemplate.Web # setting directory as default for all operations
+    # - name: Checkout subdirectory # navigating to directory with TS code
+    #   uses: actions/checkout@v2  
+    #   working-directory: DotnetTemplate.Web
 
     - name: Use Node.js 12.0.x
       uses: actions/setup-node@v3
@@ -36,7 +34,9 @@ jobs:
     - name: Build ts code 
       run: npm ci
       run: npm run build
+      working-directory: DotnetTemplate.Web
 
     - name: Test ts code
       run: npm test
+      working-directory: DotnetTemplate.Web
       
