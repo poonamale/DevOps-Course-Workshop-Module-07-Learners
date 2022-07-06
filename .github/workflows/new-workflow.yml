@@ -32,8 +32,9 @@ jobs:
         node-version: '12.0.x'
 
     - name: Build ts code 
-      run: npm ci
-      run: npm run build
+      run: |
+        npm ci
+        npm run build
       working-directory: DotnetTemplate.Web
 
     - name: Test ts code
